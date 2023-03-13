@@ -1,18 +1,33 @@
 import { FC } from "react"
 
+
 export async function getStaticPaths() {
-  const res = await fetch('http://localhost:3000/api/profile')
-  const data = await res
-  console.log(data)
+  const res = await fetch('http://localhost:3000/api/leaderboard')
+  const data = await res.json()
+  const { leaderboard } = data
+
+
+  const paths = leaderboard.map((user) => ({
+    params: { username: user.username }
+  }))
 
   return {
-    props: {
-
-    }
+    paths, fallback: false
   }
 }
 
-const User: FC = () => {
+export async function getStaticProps(context) {
+  const id = context.params.username
+  const res = await fetch(`http://localhost:3000/api/profile/${id}`)
+  const data = await res.json()
+  return {
+    props: data
+  }
+}
+
+const User: FC = (props) => {
+  console.log(props.username)
+
 
 
   return (<>
