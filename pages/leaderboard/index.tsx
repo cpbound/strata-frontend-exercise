@@ -1,5 +1,5 @@
-
 import Image from "next/image"
+import Link from "next/link"
 import { FC } from "react"
 
 
@@ -12,36 +12,37 @@ export async function getStaticProps() {
     props: {
       leaderboard
     }
-
-
   }
 }
-
 
 const Leaderboard: FC = (props) => {
 
   const { leaderboard } = props
   console.log(leaderboard)
 
-
-
   return (
-    <div className="grid-cols-1">
+    <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-8">
+      {
+        leaderboard.map((user: UserDetails) =>
+          <div key={user.username} className="m-0">
+            <div className="flex flex-col bg-gray-200 max-w-sm shadow-md py-8 px-10 md:px-8 rounded-md">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+                <Image className="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto" width={50} height={50} src={user.profileImage} alt={user.username} />
+                <div className="flex flex-col text-center md:text-left">
+                  <div className="font-medium text-lg text-gray-800">{user.username}</div>
+                  <div className="text-gray-500 mb-3 whitespace-nowrap">Score: {user.score}</div>
+                  <div className="flex flex-row gap-4 text-gray-800 my-auto text-2xl mx-auto md:mx-0">
+                    <Link href={`/profile/${user.username}`}>Click</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
 
-      {leaderboard.map((user: object) =>
-        <>
-          <Image width={50} height={50} alt={user.username} src={user.profileImage} />
-          <h1>{user.username}</h1>
-          <h2>{user.score}</h2>
-        </>
-      )}
     </div>
-
-
-
-
   )
-
 }
 
 

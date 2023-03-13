@@ -1,6 +1,16 @@
 import { FC } from "react"
 
+export async function getStaticPaths() {
+  const res = await fetch('http://localhost:3000/api/profile')
+  const data = await res
+  console.log(data)
 
+  return {
+    props: {
+
+    }
+  }
+}
 
 const User: FC = () => {
 
