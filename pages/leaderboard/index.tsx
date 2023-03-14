@@ -15,6 +15,8 @@ export async function getStaticProps() {
   }
 }
 
+
+
 const Leaderboard: FC = (props) => {
 
   const { leaderboard } = props
@@ -31,7 +33,7 @@ const Leaderboard: FC = (props) => {
                   <div className="font-medium text-lg text-gray-800">{user.username}</div>
                   <div className="text-gray-500 mb-3 whitespace-nowrap">Score: {user.score}</div>
                   <div className="flex flex-row gap-4 text-gray-800 my-auto text-2xl mx-auto md:mx-0">
-                    <Link href={`/profile/${user.username}`}>Click</Link>
+                    <Link href={`/profile/${user.username}`}>More</Link>
                   </div>
                 </div>
               </div>
