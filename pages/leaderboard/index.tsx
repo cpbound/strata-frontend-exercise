@@ -2,7 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { FC } from "react"
 
-
 export async function getStaticProps() {
   const res = await fetch('http://localhost:3000/api/leaderboard')
   const data = await res.json()
@@ -14,7 +13,6 @@ export async function getStaticProps() {
     }
   }
 }
-
 
 
 const Leaderboard: FC = (props) => {
