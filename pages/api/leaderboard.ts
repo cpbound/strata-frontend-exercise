@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import fs from "fs";
 import path from "path";
+import { ReactNode } from "react";
 
 export default function handler(
   req: NextApiRequest,
@@ -23,5 +24,10 @@ export default function handler(
     };
   });
 
-  res.status(200).json({ leaderboard });
+  res.status(200).json({
+    leaderboard,
+    map: function (arg0: (user: UserDetails) => JSX.Element): ReactNode {
+      throw new Error("Function not implemented.");
+    }
+  });
 }
