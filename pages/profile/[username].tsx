@@ -20,7 +20,7 @@ export const getServerSideProps: GetStaticProps = async ({ params }) => {
 
   if (params && params.username) {
     const username = params.username!
-    const res = await fetch(`http://localhost:3000/api/profile/${username}`)
+    const res = await fetch(`${process.env.URL}api/profile/${username}`)
     const data = await res.json()
 
     return {
