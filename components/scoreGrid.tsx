@@ -1,13 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function ScoreGrid(props: LeaderboardData) {
+export default function ScoreGrid(props: {leaderboard: LeaderboardData}) {
 
+  const { leaderboard } = props
 
   return (
     <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-8">
       {
-        props.props.map((user: UserDetails) =>
+        leaderboard.map((user: UserDetails) =>
           <div key={user.username} className="m-0">
             <Link href={`/profile/${user.username}`}>
               <div className="flex flex-col bg-gray-200 max-w-sm shadow-md py-8 px-10 md:px-8 rounded-md">

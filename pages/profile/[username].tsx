@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { FC } from "react"
 import BioCard from "../../components/bioCard"
+import { GetStaticPaths, GetStaticProps } from "next"
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('http://localhost:3000/api/leaderboard')
   const data = await res.json()
   const { leaderboard } = data
@@ -17,21 +18,25 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps(context) {
-  console.log(context)
-  const id = context.params.username
-  const res = await fetch(`http://localhost:3000/api/profile/${id}`)
-  const data = await res.json()
-  return {
-    props: data
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+
+  if (params && params.id) {
+    const username = params.username!
+    const res = await fetch(`http://localhost:3000/api/profile/${username}`)
+    const data = await res.json()
+
+    return {
+      props: data
+    }
   }
+  return {props: {error: true}}
 }
 
 
 const User: FC = (props) => {
 
   return (
-    <BioCard user={props} />
+    <BioCard username={""} bio={""} age={0} twitter={""} email={""} birthday={""} {...props} />
   )
 }
 

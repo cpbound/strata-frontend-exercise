@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import ScoreGrid from "../../components/scoreGrid"
 
 export async function getStaticProps() {
@@ -10,7 +10,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      leaderboard
+        leaderboard
     }
   }
 }
@@ -18,10 +18,13 @@ export async function getStaticProps() {
 
 const Leaderboard: FC = (props) => {
 
-  const { leaderboard } = props
-
   return (
-    <ScoreGrid props={leaderboard}/>
+    <ScoreGrid leaderboard={{
+      map: function (arg0: (user: UserDetails) => JSX.Element): ReactNode {
+        throw new Error("Function not implemented.")
+      },
+      leaderboard: []
+    }} {...props}/>
   )
 }
 
