@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
 
-  if (params && params.id) {
+  if (params && params.username) {
     const username = params.username!
     const res = await fetch(`http://localhost:3000/api/profile/${username}`)
     const data = await res.json()
