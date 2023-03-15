@@ -1,9 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
 import { FC, ReactNode } from "react"
 import ScoreGrid from "../../components/scoreGrid"
 
-export async function getStaticProps() {
+export async function getServerSideProps(context: any) {
   const res = await fetch('http://localhost:3000/api/leaderboard')
   const data = await res.json()
   const { leaderboard } = data

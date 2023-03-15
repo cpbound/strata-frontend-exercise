@@ -1,13 +1,11 @@
-import Link from "next/link"
 import { FC } from "react"
 import BioCard from "../../components/bioCard"
 import { GetStaticPaths, GetStaticProps } from "next"
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getServerSidePaths: GetStaticPaths = async () => {
   const res = await fetch('http://localhost:3000/api/leaderboard')
   const data = await res.json()
   const { leaderboard } = data
-
 
   const paths = leaderboard.map((user: ProfileData) => ({
     params: { username: user.username }
@@ -18,7 +16,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetStaticProps = async ({ params }) => {
 
   if (params && params.username) {
     const username = params.username!
