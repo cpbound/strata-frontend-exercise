@@ -8,7 +8,6 @@ export default function BioCard(props: ProfileData) {
   const handleClick = () => setLikes(likes + 1)
 
   const { username, age, birthday, bio, twitter, email } = props
-
   return (
     <div className="flex justify-center">
     <div className="flex flex-col bg-gray-100 max-w-sm shadow-md py-8 px-10 md:px-8 rounded-md  hover:bg-gray-300">
