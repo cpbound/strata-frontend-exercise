@@ -31,7 +31,7 @@ export default function Home() {
       </div>
       <main>
         <div className="relative px-6 lg:px-8">
-        <div className="text-left px-6 py-6 font-thin italic">
+        <div className="text-left text-gray-900 px-6 py-6 font-thin italic">
               <p className="py-3">
                 Hi! Chris here!
               </p>
