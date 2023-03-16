@@ -18,6 +18,9 @@ const Leaderboard: FC = (props) => {
 
   return (
     <ScoreGrid leaderboard={{
+      sort: function (arg0: (a: any, b: any) => number): LeaderboardData {
+        throw new Error("Function not implemented.")
+      },
       map: function (arg0: (user: UserDetails) => JSX.Element): ReactNode {
         throw new Error("Function not implemented.")
       },
