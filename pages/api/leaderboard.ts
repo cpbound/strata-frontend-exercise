@@ -26,7 +26,10 @@ export default function handler(
 
   res.status(200).json({
     leaderboard,
-    map: function (arg0: (user: UserDetails) => JSX.Element): ReactNode {
+    map: function (): ReactNode {
+      throw new Error("Function not implemented.");
+    },
+    sort: function (arg0: (a: any, b: any) => number): LeaderboardData {
       throw new Error("Function not implemented.");
     }
   });
