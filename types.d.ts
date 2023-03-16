@@ -5,6 +5,7 @@ interface UserDetails {
 }
 
 type LeaderboardData = {
+  sort(arg0: (a: any, b: any) => number): LeaderboardData;
   map(arg0: (user: UserDetails) => JSX.Element): React.ReactNode;
   leaderboard: UserDetails[];
 };

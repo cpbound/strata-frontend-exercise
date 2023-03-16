@@ -1,8 +1,20 @@
+Hi! Chris here!
+
+Just a little message to say thank you for actually following up and sending me a practice exercise in response to my job application. The trials and tribulations of being a junior dev straight out of a bootcamp is that most companies send you a rejection at worst and completely ignore you a best so thank you giving me a little something to practice with.
+
+I probably didn't complete this in 4 hours (it was more like 6 give or take, with breaks in the middle 😅) but I learned a lot at the very least. I knew a little of Tailwind before this but had to learn Next.js, TypeScript and Vercel from scratch before I started so cheers for the opportunity.
+
+So here's the site. It's functional, vaguely okay looking and does most of what it's meant to do. Maybe not the best but in a few months I'll come back to this exercise and see how I've improved.
+
+Cheers again! 👍
+
+Chris
+
 # Strata Frontend Dev Exercise
 
 Hi there 👋
 
-First off, we'd like to thank you for your interest in joining the strata team! 
+First off, we'd like to thank you for your interest in joining the strata team!
 We are excited to have you apply and as part of the application process we have this small exercise to assess if you are a good fit for the team.
 
 As a strata frontend dev, you will mainly be working with the following tech stack:
@@ -12,8 +24,8 @@ As a strata frontend dev, you will mainly be working with the following tech sta
 - TailwindCSS
 - Vercel
 
-This exercise is a simple task where you can show us your proficiency and style in our environment. 
-We are looking for well typed code, good state management, separation of concerns, and familiarity with React best practices (hooks, memoized calls, etc). 
+This exercise is a simple task where you can show us your proficiency and style in our environment.
+We are looking for well typed code, good state management, separation of concerns, and familiarity with React best practices (hooks, memoized calls, etc).
 
 It should take around 2-4 hours to complete.
 
@@ -21,10 +33,10 @@ It should take around 2-4 hours to complete.
 
 ## The Exercise
 
-Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles. 
-A visitor to the website can also like a user's profile, which will only be recorded for the current website visit. 
+Imagine we are building a competition for our users where we have a leaderboard and can view each users profiles.
+A visitor to the website can also like a user's profile, which will only be recorded for the current website visit.
 
-Your task is to complete the frontend code for two pages for a mock competition website. 
+Your task is to complete the frontend code for two pages for a mock competition website.
 
 The two pages are outlines as the following:
 
